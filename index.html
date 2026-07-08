@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Details</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+        }
+
+        .box{
+            width:500px;
+            margin:auto;
+            margin-top:50px;
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        h2{
+            text-align:center;
+            color:green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Registration Successful</h2>
+
+<?php
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$gender = $_POST['gender'];
+$course = $_POST['course'];
+$year = $_POST['year'];
+$phone = $_POST['phone'];
+$address = $_POST['address'];
+
+$hobbies = "";
+if(isset($_POST['hobbies']))
+{
+    $hobbies = implode(", ", $_POST['hobbies']);
+}
+
+$languages = "";
+if(isset($_POST['language']))
+{
+    $languages = implode(", ", $_POST['language']);
+}
+
+echo "<b>Name:</b> $name <br><br>";
+echo "<b>Email:</b> $email <br><br>";
+echo "<b>Password:</b> $password <br><br>";
+echo "<b>Gender:</b> $gender <br><br>";
+echo "<b>Course:</b> $course <br><br>";
+echo "<b>Year:</b> $year <br><br>";
+echo "<b>Phone:</b> $phone <br><br>";
+echo "<b>Hobbies:</b> $hobbies <br><br>";
+echo "<b>Languages:</b> $languages <br><br>";
+echo "<b>Address:</b> $address <br><br>";
+
+?>
+
+</div>
+
+</body>
+</html>
